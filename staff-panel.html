@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>پنل پرسنل | کافه فست فود لیر</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>👨‍🍳 پنل پرسنل</h1>
+        <p>
+          خوش آمدید
+          <span id="staffName" style="font-weight: 800; color: #e67e22"></span>
+        </p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="orders">📋 سفارشات</button>
+        <button class="tab-btn" data-tab="menu">🍽️ مدیریت منو</button>
+      </div>
+
+      <div id="ordersTab" class="tab-content active">
+        <div id="ordersList" class="orders-list"></div>
+      </div>
+
+      <div id="menuTab" class="tab-content">
+        <button
+          id="addMenuItemBtn"
+          class="btn btn-primary"
+          style="width: 100%; margin-bottom: 15px"
+        >
+          ➕ افزودن آیتم جدید
+        </button>
+        <div id="menuManageList" class="menu-manage-grid"></div>
+      </div>
+    </div>
+
+    <!-- Logout Button Bottom -->
+    <div class="logout-container">
+      <button id="logoutBtn" class="btn-logout">🚪 خروج از پنل</button>
+    </div>
+
+    <!-- Menu Modal -->
+    <div id="menuModal" class="modal">
+      <div class="modal-content">
+        <span
+          class="close"
+          style="float: left; font-size: 28px; cursor: pointer"
+          >&times;</span
+        >
+        <h3 id="modalTitle" style="margin-bottom: 20px">➕ افزودن آیتم</h3>
+        <form id="menuForm">
+          <input type="hidden" id="menuItemId" />
+          <div class="form-group">
+            <label>🍔 نام محصول</label>
+            <input type="text" id="menuName" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>💰 قیمت (تومان)</label>
+            <input type="number" id="menuPrice" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>🖼️ عکس محصول</label>
+            <input
+              type="file"
+              id="menuImage"
+              accept="image/*"
+              class="form-control"
+            />
+            <div id="currentImage" style="display: none; margin-top: 10px">
+              <img
+                id="currentImagePreview"
+                width="60"
+                style="border-radius: 12px"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">
+            💾 ذخیره
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
